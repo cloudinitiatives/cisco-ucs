@@ -1,8 +1,8 @@
 #############################################################################################################
 # Script Name: ucsmConfigurator
 # Author(s): Stephen K
-# Company: CloudInitiatives
-# Description: Builds and Configures Boeing UCS Pods
+# Company: 
+# Description: Builds and Configures UCS Pods
 # Version: 1.3_dev
 # Date Last Modified: 01/13/2015
 #
@@ -89,7 +89,7 @@
  $ldapProviderGrpName = "corp.gds.jeppesen.com" #This is just the provider group string.
  $ldapProviderGrpShortName = "corp" #This value is used for creating a domain in /User Management/Authentication/Authentication Domains - Limited to 16 chars.
  $baseDN = "DC=corp,DC=gds,DC=jeppesen,DC=com"
- $bindDN = "CN=svc_denucs_ldap,OU=Infrastructure,OU=DEN,OU=ServiceAccounts,OU=Restricted,DC=corp,DC=gds,DC=jeppesen,DC=com" #Non-admin user account for ldap read
+ $bindDN = "CN=svc_denucs_ldap,OU=Infrastructure,OU=DEN,OU=ServiceAccounts,OU=Restricted,DC=corp,DC=gds,DC=company,DC=com" #Non-admin user account for ldap read
  $bindPassword = Read-Host -assecurestring "Please enter the password for $bindDN"
  
  #Ldap delegation gorup dn's
@@ -102,18 +102,18 @@
  
 ## Define Static Variables
  # Management
- $mgmtCallHomeSmtpSrv = "mailhost.jeppesen.com"
- $mgmtCallHomePhysAddr = "55 Inverness Drive East, Englewood, CO. 80112"
+ $mgmtCallHomeSmtpSrv = "mailhost.email.com"
+ $mgmtCallHomePhysAddr = "5555 Inverness Drive East, City, CO. 00000"
  $mgmtCallHomeContactName = "UCS Administrators"
- $mgmtCallHomeContactPhone = "+13033284087"
- $mgmtCallHomeContactEmail = "ucsAdmins@jeppesen.com"
+ $mgmtCallHomeContactPhone = "+13035555555"
+ $mgmtCallHomeContactEmail = "ucsAdmins@company.com"
  $mgmtCallHomeCustomerId = ""
  $mgmtCallHomeContractId = ""
  $mgmtCallHomeSiteId = ""
  $mgmtCallHomeSmtpFrom = $siteCode + "UCS" + $pairSitePod + "-CallHome@jeppesen.com"
- $mgmtCallHomeSmtpRecipient = "ucsAdmins@jeppesen.com"
+ $mgmtCallHomeSmtpRecipient = "ucsAdmins@company.com"
  $mgmtDNS = ("169.143.33.236","169.143.33.36")
- $mgmtNTP = ("ntp01.jeppesen.com","ntp02.jeppesen.com","ntp03.jeppesen.com")
+ $mgmtNTP = ("ntp01.company.com","ntp02.company.com","ntp03.company.com")
  $mgmtChassisDiscPolAction = "2-link"
  $mgmtChassisDiscPolLnkAgr = "port-channel"
  $mgmtPowerPolicy = "grid"
